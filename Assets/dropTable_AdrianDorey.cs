@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class dropTable : MonoBehaviour
+public class dropTable_AdrianDorey : MonoBehaviour
 {
     [Header("Chest Types")]
-    [SerializeField] private int woodenChest = 500;
+    [SerializeField] private int woodenChest = 450;
     [SerializeField] private int bronzeChest = 250;
     [SerializeField] private int silverChest = 100;
     [SerializeField] private int goldChest = 50;
@@ -14,9 +15,9 @@ public class dropTable : MonoBehaviour
     [SerializeField] private List<string> chestDrops;
 
     [Header("Wooden Chest")]
-    [SerializeField] private int woodenChestCommon = 250;
-    [SerializeField] private int woodenChestUncommon = 100;
-    [SerializeField] private int woodenChestRare = 10;
+    [SerializeField] private int woodenChestCommon = 200;
+    [SerializeField] private int woodenChestUncommon = 50;
+    [SerializeField] private int woodenChestRare = 25;
     [SerializeField] private int woodenChestEpic = 5;
     [SerializeField] private int woodenChestLegendary = 1;
     [SerializeField] private List<string> woodenChestDrops;
@@ -24,43 +25,43 @@ public class dropTable : MonoBehaviour
     [Header("Bronze Chest")]
     [SerializeField] private int bronzeChestCommon = 200;
     [SerializeField] private int bronzeChestUncommon = 50;
-    [SerializeField] private int bronzeChestRare = 15;
+    [SerializeField] private int bronzeChestRare = 25;
     [SerializeField] private int bronzeChestEpic = 5;
     [SerializeField] private int bronzeChestLegendary = 1;
     [SerializeField] private List<string> bronzeChestDrops;
 
     [Header("Silver Chest")]
-    [SerializeField] private int silverChestCommon = 100;
+    [SerializeField] private int silverChestCommon = 50;
     [SerializeField] private int silverChestUncommon = 50;
-    [SerializeField] private int silverChestRare = 30;
+    [SerializeField] private int silverChestRare = 25;
     [SerializeField] private int silverChestEpic = 5;
     [SerializeField] private int silverChestLegendary = 1;
     [SerializeField] private List<string> silverChestDrops;
 
     [Header("Gold Chest")]
-    [SerializeField] private int goldChestCommon = 50;
+    [SerializeField] private int goldChestCommon = 100;
     [SerializeField] private int goldChestUncommon = 25;
-    [SerializeField] private int goldChestRare = 20;
-    [SerializeField] private int goldChestEpic = 10;
-    [SerializeField] private int goldChestLegendary = 2;
+    [SerializeField] private int goldChestRare = 10;
+    [SerializeField] private int goldChestEpic = 5;
+    [SerializeField] private int goldChestLegendary = 1;
     [SerializeField] private List<string> goldChestDrops;
 
     [Header("Platinum Chest")]
     [SerializeField] private int platinumChestCommon = 10;
     [SerializeField] private int platinumChestUncommon = 20;
     [SerializeField] private int platinumChestRare = 25;
-    [SerializeField] private int platinumChestEpic = 15;
+    [SerializeField] private int platinumChestEpic = 5;
     [SerializeField] private int platinumChestLegendary = 10;
     [SerializeField] private List<string> platinumChestDrops;
 
     private int randomChest;
     private int randomType;
+    private string chestType;
 
-    // Start is called before the first frame update
     void Start()
     {
-        totalChestCount();
-        chestTypeCount();
+        totalChestCount(); // total chest count updated on start
+        chestTypeCount();   // total chest types updated on start
     }
 
     private void Update()
@@ -68,7 +69,34 @@ public class dropTable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             randomChest = Random.Range(0, chestDrops.Count); 
-            Debug.Log(randomChest);
+
+            if (chestDrops[randomChest] == "Wooden Chest ")
+            {
+                randomType = Random.Range(0, woodenChestDrops.Count);
+                chestType = woodenChestDrops[randomType];
+            }
+            else if (chestDrops[randomChest] == "Bronze Chest ")
+            {
+                randomType = Random.Range(0, bronzeChestDrops.Count);
+                chestType = bronzeChestDrops[randomType];
+            }
+            else if (chestDrops[randomChest] == "Silver Chest ")
+            {
+                randomType = Random.Range(0, silverChestDrops.Count);
+                chestType = silverChestDrops[randomType];
+            }
+            else if (chestDrops[randomChest] == "Gold Chest ")
+            {
+                randomType = Random.Range(0, goldChestDrops.Count);
+                chestType = goldChestDrops[randomType];
+            }
+            else if (chestDrops[randomChest] == "Platinum Chest ")
+            {
+                randomType = Random.Range(0, platinumChestDrops.Count);
+                chestType = platinumChestDrops[randomType];
+            }
+
+            Debug.Log("You've found a " + chestDrops[randomChest] + " with a " + chestType);
         }
     }
 
