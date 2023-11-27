@@ -7,51 +7,51 @@ using Random = UnityEngine.Random;
 public class dropTable_AdrianDorey : MonoBehaviour
 {
     [Header("Chest Types")]
-    [SerializeField] private int woodenChest = 450;
-    [SerializeField] private int bronzeChest = 250;
-    [SerializeField] private int silverChest = 100;
-    [SerializeField] private int goldChest = 50;
-    [SerializeField] private int platinumChest = 1;
+    [SerializeField] private int woodenChest;
+    [SerializeField] private int bronzeChest;
+    [SerializeField] private int silverChest;
+    [SerializeField] private int goldChest;
+    [SerializeField] private int platinumChest;
     [SerializeField] private List<string> chestDrops;
 
     [Header("Wooden Chest")]
-    [SerializeField] private int woodenChestCommon = 200;
-    [SerializeField] private int woodenChestUncommon = 50;
-    [SerializeField] private int woodenChestRare = 25;
-    [SerializeField] private int woodenChestEpic = 5;
-    [SerializeField] private int woodenChestLegendary = 1;
+    [SerializeField] private int woodenChestCommon;
+    [SerializeField] private int woodenChestUncommon;
+    [SerializeField] private int woodenChestRare;
+    [SerializeField] private int woodenChestEpic;
+    [SerializeField] private int woodenChestLegendary;
     [SerializeField] private List<string> woodenChestDrops;
 
     [Header("Bronze Chest")]
-    [SerializeField] private int bronzeChestCommon = 200;
-    [SerializeField] private int bronzeChestUncommon = 50;
-    [SerializeField] private int bronzeChestRare = 25;
-    [SerializeField] private int bronzeChestEpic = 5;
-    [SerializeField] private int bronzeChestLegendary = 1;
+    [SerializeField] private int bronzeChestCommon;
+    [SerializeField] private int bronzeChestUncommon;
+    [SerializeField] private int bronzeChestRare;
+    [SerializeField] private int bronzeChestEpic;
+    [SerializeField] private int bronzeChestLegendary;
     [SerializeField] private List<string> bronzeChestDrops;
 
     [Header("Silver Chest")]
-    [SerializeField] private int silverChestCommon = 50;
-    [SerializeField] private int silverChestUncommon = 50;
-    [SerializeField] private int silverChestRare = 25;
-    [SerializeField] private int silverChestEpic = 5;
-    [SerializeField] private int silverChestLegendary = 1;
+    [SerializeField] private int silverChestCommon;
+    [SerializeField] private int silverChestUncommon;
+    [SerializeField] private int silverChestRare;
+    [SerializeField] private int silverChestEpic;
+    [SerializeField] private int silverChestLegendary;
     [SerializeField] private List<string> silverChestDrops;
 
     [Header("Gold Chest")]
-    [SerializeField] private int goldChestCommon = 100;
-    [SerializeField] private int goldChestUncommon = 25;
-    [SerializeField] private int goldChestRare = 10;
-    [SerializeField] private int goldChestEpic = 5;
-    [SerializeField] private int goldChestLegendary = 1;
+    [SerializeField] private int goldChestCommon;
+    [SerializeField] private int goldChestUncommon;
+    [SerializeField] private int goldChestRare;
+    [SerializeField] private int goldChestEpic;
+    [SerializeField] private int goldChestLegendary;
     [SerializeField] private List<string> goldChestDrops;
 
     [Header("Platinum Chest")]
-    [SerializeField] private int platinumChestCommon = 10;
-    [SerializeField] private int platinumChestUncommon = 20;
-    [SerializeField] private int platinumChestRare = 25;
-    [SerializeField] private int platinumChestEpic = 5;
-    [SerializeField] private int platinumChestLegendary = 10;
+    [SerializeField] private int platinumChestCommon;
+    [SerializeField] private int platinumChestUncommon;
+    [SerializeField] private int platinumChestRare;
+    [SerializeField] private int platinumChestEpic;
+    [SerializeField] private int platinumChestLegendary;
     [SerializeField] private List<string> platinumChestDrops;
 
     private int randomChest;
